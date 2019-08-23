@@ -25,4 +25,4 @@ export const getWhatsAppBaseUrl = (): string => {
 
 export const urlEncodeText = (text: string): string => {
   return encodeURIComponent(text);
-}
+};

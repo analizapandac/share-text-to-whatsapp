@@ -1,6 +1,6 @@
 {
   "name": "share-text-to-whatsapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,13 +11,19 @@
     "test": "jest --config jestconfig.json",
     "test:watch": "jest --watch --config jestconfig.json",
     "test:examples": "tsc && node examples/index.js",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push origin master --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push origin master --tags"
   },
-  "keywords": ["whatsapp-sharing", "whatsapp", "sharing", "web-share-api", "utility"],
+  "keywords": [
+    "whatsapp-sharing",
+    "whatsapp",
+    "sharing",
+    "web-share-api",
+    "utility"
+  ],
   "author": "Ana Liza Pandac <analizapandac@gmail.com> (https://github.com/analizapandac)",
   "license": "MIT",
   "bugs": {
