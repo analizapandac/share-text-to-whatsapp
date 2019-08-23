@@ -102,7 +102,8 @@ hasNativeSharingSupport(); // returns true or false
 ```
 
 As of August 2019, the Web Share API is supported by the following browsers. See [caniuse.com](https://caniuse.com/#search=web%20share) for a more updated information.
-![Web Share API Browser Support](./images/web-share-api-support.png)
+
+![Web Share API Browser Support](https://raw.githubusercontent.com/analizapandac/share-text-to-whatsapp/master/images/web-share-api-support.png)
 
 ### <a id="getclicktochatlink">getWhatsAppClickToChatLink(text)</a>
 

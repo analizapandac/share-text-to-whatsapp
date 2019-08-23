@@ -15,7 +15,7 @@
     "prepublishOnly" : "npm test && npm run lint",
     "preversion" : "npm run lint",
     "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "postversion" : "git push origin master --tags"
   },
   "keywords": ["whatsapp-sharing", "whatsapp", "sharing", "web-share-api", "utility"],
   "author": "Ana Liza Pandac <analizapandac@gmail.com> (https://github.com/analizapandac)",
