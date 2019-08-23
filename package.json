@@ -1,0 +1,37 @@
+{
+  "name": "share-text-to-whatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "cp src/global.d.ts ./global.d.ts && tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "test:watch": "jest --watch --config jestconfig.json",
+    "test:examples": "tsc && node examples/index.js",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "keywords": ["whatsapp-sharing", "whatsapp", "sharing", "web-share-api", "utility"],
+  "author": "Ana Liza Pandac <analizapandac@gmail.com> (https://github.com/analizapandac)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/analizapandac/share-text-to-whatsapp/issues"
+  },
+  "homepage": "https://github.com/analizapandac/share-text-to-whatsapp#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "jsdom": "^15.1.1",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  }
+}
