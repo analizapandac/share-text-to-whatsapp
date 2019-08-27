@@ -22,10 +22,10 @@ interface ShareData {
 }
 
 type Fallback = () => void; // fallback function if native sharing is not supported
-export const shareTextViaNativeSharing = (data: ShareData, fallbackFunction?: Fallback): void => {
-  if (hasNativeSharingSupport()) {
-    navigator.share!(data);
-  } else {
+export const shareTextViaNativeSharing = async (data: ShareData, fallbackFunction?: Fallback): Promise<void> => {
+  try {
+    await navigator.share!(data);
+  } catch (err) {
     if (typeof fallbackFunction === 'function') {
       fallbackFunction();
     }

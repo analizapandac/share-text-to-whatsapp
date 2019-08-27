@@ -7,5 +7,5 @@ interface ShareData {
     url?: string;
 }
 declare type Fallback = () => void;
-export declare const shareTextViaNativeSharing: (data: ShareData, fallbackFunction?: Fallback | undefined) => void;
+export declare const shareTextViaNativeSharing: (data: ShareData, fallbackFunction?: Fallback | undefined) => Promise<void>;
 export {};

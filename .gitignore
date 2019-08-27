@@ -1,3 +1,4 @@
 node_modules
 index.js
 util.js
+*-error.log
