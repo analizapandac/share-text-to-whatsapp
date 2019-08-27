@@ -1,24 +1,20 @@
-const isIOSDevice = (): boolean => {
-  const iDevices = ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'];
-  if (navigator) {
-    return !!navigator.platform && iDevices.indexOf(navigator.platform) !== -1;
-  }
+// The client user agent string.
+// Lowercase, so we can use the more efficient indexOf(), instead of Regex
+const userAgent = window.navigator.userAgent.toLowerCase();
 
-  return false;
+const isWindows = (): boolean => {
+  return userAgent.indexOf('windows') !== -1;
 };
 
-const IPAD_MAX_WIDTH = '1024px';
+const isAndroid = (): boolean => {
+  return !isWindows() && userAgent.indexOf('android') !== -1;
+};
+
 export const getWhatsAppBaseUrl = (): string => {
   let link = `https://wa.me/`;
-  if (isIOSDevice()) {
-    try {
-      const isIPadOrMobile = window.matchMedia(`(max-width: ${IPAD_MAX_WIDTH})`).matches;
-      if (isIPadOrMobile) {
-        link = `whatsapp://send`;
-      }
-    } catch (err) {
-      link = `whatsapp://send`;
-    }
+  if (isAndroid()) {
+    // use this link for android devices
+    link = `whatsapp://send`;
   }
   return link;
 };
